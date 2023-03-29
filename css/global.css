@@ -1,0 +1,653 @@
+@charset "utf-8";
+/* CSS Document */
+
+html, body, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video {
+    margin:  0;
+    padding:  0;
+    border:  0;
+    outline:  0;
+    font-size:  100%;
+    vertical-align:  baseline;
+    background:  transparent;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, figure, footer, header, hgroup, nav, section {display:  block; position: relative;}
+
+ul {list-style:  none;}
+blockquote, q {quotes:  none;}
+blockquote:before, blockquote:after, q:before, q:after {content:  ''; content:  none;}
+a {margin:  0; padding:  0; font-size:  100%; vertical-align:  baseline;}
+del {text-decoration:  line-through;}
+abbr[title], dfn[title] {border-bottom:  1px dotted #000; cursor:  help;}
+
+body {line-height: 1; min-width: 1160px;}
+
+/* tables still need cellspacing="0" in the markup */
+table {border-collapse:  collapse; border-spacing:  0;}
+th {font-weight:  bold; vertical-align:  middle;}
+td {font-weight:  normal; vertical-align:  top;}
+hr {display:  block; height:  1px; border:  0; border-top:  1px solid #ccc; margin:  1em 0; padding:  0;}
+
+/* Form Elements */
+input, select {vertical-align:  middle;color: #6d6d6d;}
+input[type="radio"] {vertical-align:  text-bottom;}
+input[type="checkbox"] {vertical-align:  middle;}
+.ie6 input {vertical-align:  text-bottom;color: #6d6d6d;}
+select, input, textarea {font:  99% sans-serif;color: #6d6d6d;}
+
+a:hover, a:active {outline:  none;}
+small {font-size:  85%;}
+strong, th {font-weight:  bold;}
+td, td img {vertical-align:  top;}
+
+sub, sup {font-size:  75%; line-height:  0; position:  relative;}
+sup {top:  -0.5em;}
+sub {bottom:  -0.25em;}
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {font-family:  monospace, sans-serif;}
+
+/* hand cursor on clickable elements */
+.clickable, label, input[type=button], input[type=submit], button {cursor:  pointer;}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {margin:  0;}
+
+/* make buttons play nice in IE */
+button {width:  auto; overflow:  visible;}
+
+a, img a, img, a img {border: 0; outline: 0; text-decoration: none;}
+
+/* FLOAT-elements */
+.fltleft {float: left;}
+.fltright {float: right;}
+
+/*Visually Hidden*/
+.hidden{
+    display: none !important;
+}
+
+/* let's clear some floats */
+.clearfix:before, .clearfix:after { content:  "\0020"; display:  block; height:  0; overflow:  hidden; }
+.clearfix:after { clear:  both; }
+
+
+/* only to clear floats - to be used with any class as addition */
+.clear {
+    clear: both;
+}
+
+/* clear float with blank <div>or <br>*/
+.clrflt {
+    clear: both;
+    line-height: 1px;
+    font-size: 1px;
+    overflow:  hidden;
+}
+
+#nc-pixel-container-footer * {
+    position: absolute;
+    height: 0;
+}
+
+/* Default style for jquery autocomplete dropdown */
+.ui-widget-content {
+    border: 1px solid #aaaaaa;
+    background: #ffffff ;
+    color: #222222;
+}
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.ui-menu .ui-menu-item {
+    display:block;
+    padding:.3em .4em;
+    line-height:1;
+    zoom:1;
+}
+
+/* --------------------------------------------------------------------- */
+/* Messaging
+/* --------------------------------------------------------------------- */
+
+.warning,
+.success,
+.error,
+.note {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 1px solid #999;
+    font-family: Arial,Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 10px auto 20px;
+    padding: 12px 4px 12px 45px;
+    text-align: left;
+    vertical-align: middle;
+}
+.error {
+    background-color: #FFC1C1;
+    background-image: url(/images/messages/error.png);
+    border-color: #EA8D8D;
+    color: #C11;
+}
+.error ul { padding: 10px 0px 0px 30px }
+.error_pg2 {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 1px solid #999;
+    font-family: Arial,Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 10px 0;
+    padding: 12px 4px 24px 45px;
+    text-align: left;
+    vertical-align: middle;
+    width: 320px;
+}
+.error_wrapper {
+    font-size: 12px;
+    margin: -458px auto 0;
+    padding-bottom: 10px;
+    padding-left: 230px;
+    position: relative;
+    width: 400px;
+}
+.success {
+    background-color: #d4f1cf;
+    background-image: url(/images/messages/success.png);
+    border-color: #147003;
+    color: #147003;
+}
+.note {
+    background-color: #ffc993;
+    background-image: url(/images/messages/note.png);
+    border-color: #ff8000;
+    color: #000;
+}
+.warning {
+    background-color: #ddc863;
+    background-image: url(/images/messages/warn.png);
+    border-color: #9f8306;
+    color: #000;
+}
+a {
+    cursor: pointer;
+}
+
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #6D6D6D;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color: #6D6D6D;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color: #6D6D6D;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: #6D6D6D;
+}
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/*** Billing ***/
+
+.billing .wrapper {
+    width: 1152px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.billing #wait {
+    height: 294px;
+}
+
+.billing .wait {
+    height: 294px;
+}
+
+.billing .wait .text-wrap {
+    position: absolute;
+    left: 133px;
+    top: 178px;
+    padding-bottom: 15px;
+    width: 906px;
+}
+
+.billing .wait h1 {
+    position: relative;
+    color: #ec008c;
+    font-size: 46px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    margin: 15px 0 10px;
+    text-transform: uppercase;
+}
+
+.billing .wait h1 span {
+    color:#000000;
+}
+
+.billing .wait .sub {
+    font-size: 18px;
+    color: #666;
+    width: 850px;
+}
+
+.billing #main-billing {
+    color: #000 !important;
+    font-family: "Helvetica", Arial, sans-serif !important;
+    position: relative;
+    padding-top: 10px;
+}
+
+.main-billing-wrapper {
+    width: 950px;
+    position: relative;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.billing .col {
+    float: left;
+    position: relative;
+}
+
+.billing .left-col {
+    width: 456px;
+    position: relative;
+}
+
+.billing .right-col {
+    width: 420px;
+    float: right;
+    position: relative;
+    border: 3px solid #ebebeb;
+}
+
+
+.billing .right-col ol{
+    list-style: none;
+}
+
+.billing .right-col ol li p{
+    font-size: 13px;
+    padding: 0 0 6px;
+}
+
+.billing .right-col ol li {
+    margin: 20px 0;
+}
+
+.prices {
+    font-size: 14px;
+    position: relative;
+}
+
+.prices dl {
+    margin: 25px 0;
+}
+
+.prices .prices-label {
+    clear: both;
+    float: left;
+    text-align: right;
+    width: 75px;
+    padding: 5px 0;
+}
+
+.prices .prices-amount {
+    float: right;
+    margin-left: 25px;
+    display: block;
+    padding: 5px 0;
+}
+
+.prices-total {
+    padding: 12px 0 7px;
+    position: relative;
+    z-index: 1;
+    clear: both;
+    top: 10px;
+    height: 30px;
+    float :right;
+}
+
+.prices-total:before {
+    border-top: 2px solid #d9e4e5;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.billing-products-container {
+    width: 430px;
+    position: relative;
+}
+
+.billing-product-row {
+    border-bottom: 2px solid #d9e4e5;
+    font-size: 12px;
+    padding: 20px 0 25px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.billing-product-row:before {
+    border-bottom: 1px solid #f6f5f5;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#trial-row {
+    height: 120px;
+}
+
+#trial-row:before {
+    border-top: 2px solid #d9e4e5;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+#trial-checkbox{
+    margin-top: -5px;
+}
+
+#ebook-checkbox {
+    margin-top: -7px;
+}
+
+#trial-row .product-image {
+    display: block;
+    float: left;
+    width: 110px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+}
+
+.billing-product-row img {
+    float: left;
+    margin-right: 15px;
+}
+
+.billing-product-row label {
+    font-family: "HelveticaNeueLTStdMedCnRg",Helvetica,sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 5px;
+}
+
+.no-fontface .billing-product-row label {
+    font-weight: normal;
+}
+
+.billing-product-row p {
+    margin: 5px 0 5px 128px;
+    display: block;
+}
+
+.billing-product-row ul {
+    margin: 5px 0 5px 128px;
+    display: block;
+    line-height: 1.4;
+    list-style: disc;
+}
+
+.billing-product-row p span{
+    color: #0035ae;
+}
+
+.billing-product-row .checkmark {
+    background: url('https://s3.amazonaws.com/hydra-images/1D/7F/d1e48e.png') no-repeat left center;
+    padding-left: 17px;
+    color: #a3a3a3;
+}
+
+.billing-product-row em {
+    color: #0037ad;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.billing .final-step {
+    font-family: "Helvetica Neue Bld Cnd", Helvetica, sans-serif;
+    font-size: 42px;
+    color: #F50089;
+    padding: 15px 25px 10px 25px;
+    font-weight: bold;
+    background-color: #fff;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px #ccc;
+}
+
+.billing .security-encrypt{
+    background-image: url(https://s3.amazonaws.com/hydra-images/32/BB/66f21d.png);
+    background-position: top center;
+    background-color: #ebebeb;
+    background-repeat: no-repeat;
+    width: 414px;
+    height: 72px;
+    border: 3px solid #ebebeb;
+}
+
+.prices {
+    float: right;
+}
+
+.callout-col {
+    position: relative;
+    height: 157px;
+    width: 285px;
+    float: left;
+}
+
+.billing .shipping_options_col {
+    margin: 20px 0 20px 116px;
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.billing .shipping_options_col label {
+    cursor: pointer;
+}
+
+.billing .shipping_options_col .shipping_option {
+    margin-bottom: 10px;
+}
+
+#form fieldset li.cc-code {
+    margin: 0 0 18px;
+}
+
+.select_box4 {
+    line-height: 20px;
+    color: #6D6D6D;
+    width: 136px;
+    font-size: 16px;
+}
+
+.select_box4 select {
+    width: 100px;
+    color: #6d6d6d;
+}
+
+.callout-blue {
+    width: 100%;
+    border-top: 3px solid #ebebeb;
+    border-bottom: 3px solid #ebebeb;
+}
+
+.callout-blue p {
+    margin: 10px;
+    text-align: center;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 12px;
+    line-height: 1.3;
+    font-weight: bold;
+    display: block;
+    background: #f1008f;
+}
+
+.credit-cards {
+    margin: 0 0 15px;
+    padding: 0;
+}
+
+.credit-cards img {
+    margin-right: 2px;
+}
+
+#form .label-required {
+    font-family: "HelveticaNeueLTStdMedCnRg",Helvetica,sans-serif;
+    font-size: 18px;
+    margin-left: -10px;
+}
+
+.billing #form fieldset label {
+    margin: 0 0 0 -11px;
+}
+
+.billing .label-required {
+    display: block;
+}
+
+.billing .label-required:before {
+    content: "* ";
+    color: #f90202;
+}
+
+.billing .label-required span {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.billing .label-required .cvv-link {
+    color: #2424ff;
+    text-decoration: none;
+}
+
+.billing .card-input-container {
+    margin: 20px 30px 0 30px;
+}
+
+.billing .card-input-container ol {
+    clear: both;
+}
+
+.billing .card-input-container p {
+    font-size: 12px;
+    margin: 0 0 5px;
+}
+
+.billing .card-input-container input,
+.billing .card-input-container select {
+    border: 1px solid #DDD;
+    -moz-box-shadow:    1px 3px 5px #DDD inset;
+    -webkit-box-shadow: 1px 3px 5px #DDD inset;
+    box-shadow:         1px 3px 5px #DDD inset;
+}
+
+.billing #cc-code {
+    width: 50px;
+}
+
+.billing .rush-button {
+    width: 415px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.billing .rush-btn {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-color: transparent;
+    border: none;
+    text-transform: capitalize;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 340px;
+    height: 103px;
+    position: relative;
+    display: block;
+    margin: 25px auto;
+}
+
+.billing .rush-btn:active {
+    background-position: 0 1px;
+}
+
+.billing .text_block {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.billing .t-c{
+    position: absolute;
+    top: 540px;
+}
+#accepted-cards-images li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.terms-content {
+    clear: both;
+    color: #aaacaf;
+    font-size: 10px;
+    line-height: 1.1;
+    margin: 0 auto;
+    padding: 20px 0;
+    position: relative;
+    text-align: center;
+    width: 1000px;
+}
+.inner_info_top a,
+.mbg a,
+.confirmation #order-info a {
+    color: inherit;
+}
+
+body, p, input, button, select, textarea {min-width: auto; font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
+.wrapper {
+    width: 90%;
+    max-width: 1410px;
+    padding: 0 15px;
+    margin: 0 auto;
+    position: relative;
+}
+.slideout-wrapper, .ghosted { display:none; }
+.retailers{display: none;}
+.header-nav :nth-child(2), .header-nav :nth-child(4){display: none;}
+.slideout :nth-child(3), .slideout :nth-child(5){display: none;}
+.follow-us a:nth-child(3), .follow-us a:nth-child(2){display: none;}
+.customer-service a{display: none !important;}
+.prod-details{
+    
+}
+.prod_detail_link {
+    font-size: 18px;
+    color: #6D6E71;
+}
